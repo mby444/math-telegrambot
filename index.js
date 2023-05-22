@@ -10,14 +10,16 @@ const port = process.env.PORT;
 
 telegramBot.init();
 
-app.get("/", (req, res) => {
-    res.sendStatus(200);
-});
+// app.set("view engine", "ejs");
 
-app.use("*", (req, res) => {
-    res.sendStatus(404);
-});
+// app.get("/", (req, res) => {
+//     res.sendStatus(200);
+// });
 
-app.listen(port, () => {
-    console.log(`Server running at port ${port}...`);
-});
+// app.use("*", (req, res) => {
+//     res.sendStatus(404);
+// });
+
+// app.listen(port, () => {
+//     console.log(`Server running at port ${port}...`);
+// });

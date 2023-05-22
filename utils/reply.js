@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import { solve } from "./math.js";
 
 const getReplyData = async (path = "./json/reply.json") => {
     try {
@@ -18,8 +19,9 @@ export const getReply = async (key = "") => {
     return message;
 };
 
-export const getMathReply = () => {
-    
+export const getMathReply = (text = "") => {
+    const mathReply = solve(text);
+    return mathReply;
 };
 
 export default {

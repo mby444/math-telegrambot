@@ -1,5 +1,5 @@
 import { bot } from "../constants/bot.js";
-import { getReply } from "../utils/reply.js";
+import { getMathReply, getReply } from "../utils/reply.js";
 
 export class Bot {
     constructor() {
@@ -25,10 +25,10 @@ export class Bot {
             });
         });
 
-        bot.onText((/(.+)/), (msg, match) => {
+        bot.onText((/^(.+)$/), (msg, match) => {
             this.requestCallback(async (disrequest) => {
-                const chatId = msg.chat.id;
-                const response = "/help";
+                const [chatId, request] = [msg.chat.id, match[0] || ""];
+                const response = getMathReply(request);
                 await bot.sendMessage(chatId, response);
                 disrequest();
             });
