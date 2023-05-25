@@ -22,11 +22,38 @@ const evaluateInput = (value = "") => {
     `;
 };
 
+const filterInfinity = (value = "0") => {
+    const number = parseFloat(value);
+    const infiniteNumbers = [16331239353195370];
+    const isInfinity = !isFinite(number) || infiniteNumbers.includes(number);
+    const output = isInfinity ? "Not defined" : value;
+    return output;
+};
+
+const decodeMathSymbol = (value = "") => {
+    const symbolPairs = [
+        ["×", "*"],
+        ["÷", "/"],
+        ["^", "**"],
+        ["π", Math.PI.toString()],
+    ];
+    const symbolKeys = [...symbolPairs.map((v) => v[0])];
+    const decoded = value.split("").map((v, i) => {
+        const hasSymbol = symbolKeys.includes(v);
+        const output = hasSymbol ? symbolPairs.find((pair) => pair[0] === v)[1] : v;
+        return output;
+    }).join("");
+    return decoded;
+};
+
 export const solve = (value = "") => {
     try {
-        const evaluatorInput = evaluateInput(value);
+        const decodedValue = decodeMathSymbol(value);
+        const evaluatorInput = evaluateInput(decodedValue);
         const evaluated = (Function(evaluatorInput))();
-        const output = String(evaluated);
+        if (typeof evaluated !== "number") throw new Error("Evaluated value is not number");
+        const fixedEvaluated = Math.round(evaluated * 10e5) / 10e5;
+        const output = filterInfinity(String(fixedEvaluated));
         return output;
     } catch (err) {
         const output = "Invalid math expressions.\nPlease see /help";

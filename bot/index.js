@@ -17,14 +17,6 @@ export class Bot {
             });
         });
 
-        bot.onText(/^(\/hello (.+))$/, (msg, match) => {
-            this.requestCallback(async (disrequest) => {
-                const [chatId, request] = [msg.chat.id, match[2] || ""];
-                await bot.sendMessage(chatId, request);
-                disrequest();
-            });
-        });
-
         bot.onText((/^(.+)$/), (msg, match) => {
             this.requestCallback(async (disrequest) => {
                 const [chatId, request] = [msg.chat.id, match[0] || ""];
