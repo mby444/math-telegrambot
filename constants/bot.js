@@ -7,6 +7,6 @@ export const botToken = process.env.BOT_TOKEN;
 export const bot = new TelegramBot(botToken, { polling: true });
 
 export default {
-    botToken,
-    bot,
+  botToken,
+  bot,
 };

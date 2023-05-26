@@ -1,4 +1,10 @@
 [
-    ["/start", "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"],
-    ["/help", "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"]
+  [
+    "/start",
+    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"
+  ],
+  [
+    "/help",
+    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"
+  ]
 ]
