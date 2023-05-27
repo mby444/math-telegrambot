@@ -9,7 +9,7 @@ export class Bot {
   }
 
   init() {
-    bot.onText(/^((\/start|\/help))$/, (msg, match) => {
+    bot.onText(/^((\/start|\/help|\/reference))$/, (msg, match) => {
       this.requestCallback(async (disrequest) => {
         const chatId = msg.chat.id;
         const response = await getReply(match[0]);

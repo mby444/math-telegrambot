@@ -1,10 +1,14 @@
 [
   [
     "/start",
-    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"
+    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1\n\nFor more information, see /reference"
   ],
   [
     "/help",
-    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1"
+    "Hello!\n\nSend me a simple math expression,\nfor example:\nsin(30) + 1\n\nFor more information, see /reference"
+  ],
+  [
+    "/reference",
+    "MATH REFERENCE:\n\nA. Constant\n1. e - Euler's number, the base of the natural logarithm.\n2. Infinity - A number which is larger than the maximum number.\n3. pi - The ratio of a circle's circumference to its diameter.\n4. phi - The golden ratio.\n5. tau - The ratio constant of a circle's circumference to radius.\n\nB. Arithmetic\n1. abs(x) - Calculate the absolute value of x.\nEquation: abs(-2) = 2\n2. cbrt(x) - Calculate the cube root of x.\nEquation: cbrt(8) = 2\n3. log(x, n) - Calculate the n-base logarithm of x.\nEquation: log(8, 2) = 3\n4. log10(x) - Calculate the 10-base logarithm of x.\nEquation: log10(10) = 1\n5. log2(x) - Calculate the 2-base logarithm of x.\nEquation: log2(8) = 3\n6. log(x) - Calculate the e-base logarithm of x.\nEquation: log(e) = 1\n7. pow(x, y) - Calculates the power of x to y.\nEquation: pow(2, 3) = 8\n8. sqrt(x) - Calcculate the square root of x.\nEquation: sqrt(64) = 8\n9. square(x) - Calculate the square of x.\nEquation: square(8) = 64\n\nC. Geometry\n1. distance([x1, y1], [x2, y2]) - Calculates distance between two points.\nEquation: distance([0, 0], [3, 4]) = 5\n\nD. Trigonometry\n1. acos(x)\n2. acosh(x)\n3. acot(x)\n4. acoth(x)\n5. acsc(x)\n6. acsch(x)\n7. asec(x)\n8. asech(x)\n9. asin(x)\n10. asinh(x)\n11. atan(x)\n12. atan2(x)\n13. atanh(x)\n14. cos(x)\n15. cosh(x)\n16. cot(x)\n17. coth(x)\n18. csc(x)\n19. csch(x)\n20. sec(x)\n21. sech(x)\n22. sin(x)\n23. sinh(x)\n24. tan(x)\n25. tanh(x)\n\nE. Probability\n1. x! - Compute the factorial of a x.\nEquation: 4! = 24\n2. combinations(x, k) - Compute the number of ways of picking k unordered outcomes from n possibilities.\nEquation: combinations(6, 2) = 15\n3. permutations(x, k) - Compute the number of ways of obtaining an ordered subset of k elements from a set of n elements.\nEquation: permutations(6, 2) = 30\n\nF. Statistics\n1. max(a, b, c, ...) - Compute the maximum number.\nEquation: max(1, 4, 2, 3) = 4\n2. mean(a, b, c, ...) - Compute the mean number.\nEquation: mean(1, 2, 3) = 2\n3. median(a, b, c, ...) - Compute the median number.\nEquation: median(1, 2, 3) = 2\n4. min(a, b, c, ...) - Compute the minimum number.\nEquation: min(1, 4, 2, 3) = 1\n5. sum(a, b, c, ...) - Compute the sum of number.\nEquation: sum(1, 2, 3, 4) = 10"
   ]
 ]
