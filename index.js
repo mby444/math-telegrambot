@@ -17,9 +17,9 @@ app.set("view engine", "ejs");
 app.get("/", indexRouter);
 app.use("*", notFoundRouter);
 
-connectDB((connection) => {
-  console.log("MongoDB connected!");
+// connectDB((connection) => {
+//   console.log("MongoDB connected!");
   app.listen(port, () => {
     console.log(`Server running at port ${port}...`);
   });
-});
+// });
