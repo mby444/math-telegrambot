@@ -1,6 +1,6 @@
 import { bot } from "../constants/bot.js";
 import { getMathReply, getReply } from "../utils/reply.js";
-import { saveUserChat } from "../database/utils/users.js";
+// import { saveUserChat } from "../database/utils/users.js";
 
 export class Bot {
   constructor() {
@@ -13,7 +13,7 @@ export class Bot {
       this.requestCallback(async (disrequest) => {
         const chatId = msg.chat.id;
         const response = await getReply(match[0]);
-        this.saveChat(msg, match, response);
+        // this.saveChat(msg, match, response);
         await bot.sendMessage(chatId, response);
         disrequest();
       });
@@ -23,7 +23,7 @@ export class Bot {
       this.requestCallback(async (disrequest) => {
         const [chatId, request] = [msg.chat.id, match[0] || ""];
         const response = getMathReply(request);
-        this.saveChat(msg, match, response);
+        // this.saveChat(msg, match, response);
         await bot.sendMessage(chatId, response);
         disrequest();
       });
@@ -44,17 +44,17 @@ export class Bot {
     });
   }
 
-  async saveChat(msg, match, response) {
-    const userData = {
-      chatId: msg.chat.id,
-      username: msg.chat.username,
-      request: match[1],
-      response,
-      date: Date(),
-    };
+  // async saveChat(msg, match, response) {
+  //   const userData = {
+  //     chatId: msg.chat.id,
+  //     username: msg.chat.username,
+  //     request: match[1],
+  //     response,
+  //     date: Date(),
+  //   };
 
-    await saveUserChat(userData);
-  }
+  //   await saveUserChat(userData);
+  // }
 }
 
 export default {

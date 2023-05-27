@@ -24,7 +24,7 @@ app.use("*", notFoundRouter);
 //   });
 // });
 
-connectDB();
+// connectDB();
 app.listen(port, () => {
   console.log(`Server running at port ${port}...`);
 });
